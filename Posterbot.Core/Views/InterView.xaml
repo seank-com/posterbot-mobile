@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views:MvxContentPage
+    x:TypeArguments="viewModels:InterViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:sync="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+    xmlns:viewModels="clr-namespace:Posterbot.Core.ViewModels;assembly=Posterbot.Core"
+    x:Class="Posterbot.Core.Views.InterView">
+    <views:MvxContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                mvx:Bi.nd="Text Quote" 
+                FontSize="20" 
+                HorizontalTextAlignment="Center" 
+                BackgroundColor="Blue" 
+                TextColor="White"/>
+            <sync:SfBusyIndicator Grid.Row="1" 
+                x:Name="sfbusyindicator" 
+                Duration="1.5" 
+                AnimationType="Gear" 
+                VerticalOptions="FillAndExpand" 
+                ViewBoxWidth="150" 
+                ViewBoxHeight="150" 
+                BackgroundColor="White"/> 
+            <Label Grid.Row="2" 
+                Text="This is the other problem area, nice huh?"
+                VerticalTextAlignment="End"
+                FontSize="20" 
+                HorizontalTextAlignment="Center"
+                BackgroundColor="Red"/>
+        </Grid>
+    </views:MvxContentPage.Content>
+</views:MvxContentPage>
